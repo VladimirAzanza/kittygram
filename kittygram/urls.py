@@ -13,3 +13,18 @@ urlpatterns = [
    # path('cats/', CatList.as_view()),
    # path('cats/<int:pk>/', CatDetail.as_view())
 ]
+
+
+# urls.py will change if we have a viewset. We have to configure the routers.
+'''
+from rest_framework.routers import SimpleRouter
+from django.urls import include, path
+from cats.views import CatViewSet
+
+router = SimpleRouter()
+router.register('cats', CatViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
+'''

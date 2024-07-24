@@ -62,3 +62,17 @@ class CatDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Cat.objects.all()
     serializer_class = CatSerializer
 '''
+
+# If we want a high level CBV for DRF using viewsets. Do not forget the router.
+
+'''
+from rest_framework import viewsets
+
+from .models import Cat
+from .serializers import CatSerializer
+
+
+class CatViewSet(viewsets.ModelViewSet):
+    queryset = Cat.objects.all()
+    serializer_class = CatSerializer
+'''
